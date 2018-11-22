@@ -1,0 +1,7 @@
+# install ansible
+On Ubuntu/Debian/Linux Mint
+ sudo apt-get install ansible
+On RHEL/CentOS/Fedora
+ sudo yum install epel-release
+
+ sudo yum install ansible
