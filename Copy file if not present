@@ -1,0 +1,13 @@
+---
+- hosts: all
+tasks:
+  - name: Check that the file exists
+    stat:
+      path: /file_address/file_name
+    register: stat_result
+
+  - name: Copy the file, if it doesnt exist already
+    template:
+      src: /file_address/file_name
+      dest: /destination_address/file_name
+    when: stat_result.stat.exists == False   
