@@ -1,0 +1,22 @@
+---
+- hosts: all
+  remote_user: username
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: "Install NGINX and MySQL"
+      apt: name={{ item }} state=present
+      with_items:
+        - nginx
+        - mysql-server
+        - python-mysqldb
+
+    - name: "Start and enable the NGINX and MySQL services"
+      service: name={{ item }} state=started enabled=yes
+      with_items:
+        - nginx
+        - mysql
+
+    - name: "Create a test database"
+      mysql_db: name=testDatabase
+                state=present
