@@ -5,3 +5,6 @@ On RHEL/CentOS/Fedora
  sudo yum install epel-release
 
  sudo yum install ansible
+ 
+ # Check version
+ ansible --version
