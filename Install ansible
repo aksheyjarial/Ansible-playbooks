@@ -8,3 +8,6 @@ On RHEL/CentOS/Fedora
  
  # Check version
  ansible --version
+ 
+ # Run playbooks
+ ansible-playbook -i myhosts file_name.yaml
