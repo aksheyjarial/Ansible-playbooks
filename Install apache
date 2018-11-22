@@ -1,0 +1,17 @@
+---
+
+- name: install apache
+
+  hosts: all
+
+  sudo: yes
+
+  tasks:
+
+    - name: install apache2
+
+      apt: 
+
+        name: apache2 
+
+        state: latest
